@@ -11,7 +11,7 @@ Before you start using it, Install required packages by running following comman
 
 To start server type the following command in your Terminal.
 
-     uvicorn main:app --reload --host localhost --port 8000
+     python3 main.py
   This will start [uvicorn](https://github.com/encode/uvicorn) server, you can access server using `http://localhost:8000` and API Docs at `http://localhost:8000/docs` it uses Swagger UI for API documentations.
 
 There's couple of extra files in `apis/*` which contains in-active APIs or under-development APIs, you can delete them, if you want to. Here's folder structure :
