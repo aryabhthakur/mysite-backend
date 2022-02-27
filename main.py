@@ -4,12 +4,14 @@ from database import models
 from database.database import engine
 from fastapi.security import OAuth2PasswordBearer
 from dotenv import dotenv_values
-from fastapi.middleware import gzip, trustedhost,cors
+from fastapi.middleware import gzip,cors
 from apis import auth as AuthApi
 from apis import frameworks as FrameworksApi
 from apis import languages as LanguagesApi
 from apis import projects as ProjectsApi
 from apis import relations as RelationsApi
+import uvicorn
+
 env = dotenv_values(".env")
 models.Base.metadata.create_all(bind=engine)
 
@@ -57,16 +59,14 @@ app = FastAPI(
     openapi_tags=openapi_tags
 )
 origins = {
-    "http://192.168.1.6",
-    "http://192.168.1.6:3000",
     "http://0.0.0.0",
     "http://0.0.0.0:3000",    
     "http://localhost",
-    "http://localhost:3000",  
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1"  
 }
-# app.add_middleware(
-#     trustedhost.TrustedHostMiddleware, allowed_hosts=env['TRUSTED_HOSTS']
-# )
+
 app.add_middleware(
     cors.CORSMiddleware,
     allow_origins=origins,
@@ -93,6 +93,8 @@ app.include_router(LanguagesApi.router,tags=['Languages'],prefix='/languages')
 app.include_router(FrameworksApi.router,tags=['Frameworks'],prefix='/frameworks')
 app.include_router(RelationsApi.router,tags=['Relations'],prefix='/relations')
 
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000, log_level="info")
 
     
 
