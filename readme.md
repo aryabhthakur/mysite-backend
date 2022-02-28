@@ -1,8 +1,8 @@
 This project is distributed into two part, **Backend** and **Frontend**.
 | Repo | URL 
 |---------------|--------------------
-| Frontend - Next.js (ReactJS)| https://github.com 
-| Backend - FastAPI (Python) | https://github.com 
+| Frontend - Next.js (ReactJS)| (Pushing Soon)
+| Backend - FastAPI (Python) | https://github.com/aryabhthakur/mysite-backend
 
 You are currently in **Backend** Repo developed in Python3 using FastAPI, 
 Before you start using it, Install required packages by running following command in your Terminal from project path, where main.py file is located.
