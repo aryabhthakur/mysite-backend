@@ -1,7 +1,7 @@
 This project is distributed into two part, **Backend** and **Frontend**.
 | Repo | URL 
 |---------------|--------------------
-| Frontend - Next.js (ReactJS)| (Pushing Soon)
+| Frontend - Next.js (ReactJS)| https://github.com/aryabhthakur/mysite-frontend
 | Backend - FastAPI (Python) | https://github.com/aryabhthakur/mysite-backend
 
 You are currently in **Backend** Repo developed in Python3 using FastAPI, 
